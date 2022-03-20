@@ -1,9 +1,10 @@
+import { NextPage } from "next";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import usePremiumUser from "../hooks/usePremiumUser";
 import { manage } from "../stripe/stripe-client";
 
-const admin = () => {
+const Admin: NextPage = () => {
   const [user, premium, loading, error] = usePremiumUser();
   const router = useRouter();
 
@@ -30,4 +31,4 @@ const admin = () => {
   );
 };
 
-export default admin;
+export default Admin;

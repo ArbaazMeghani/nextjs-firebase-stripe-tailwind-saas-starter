@@ -8,7 +8,7 @@ import * as Stripe from "../stripe/stripe-client";
 import firebase from "../firebase/firebase-config";
 
 const auth = getAuth(firebase.app());
-const checkout: NextPage = () => {
+const Checkout: NextPage = () => {
   const [user, loading, error] = useAuthState(auth);
   const router = useRouter();
 
@@ -35,4 +35,4 @@ const checkout: NextPage = () => {
   );
 };
 
-export default checkout;
+export default Checkout;

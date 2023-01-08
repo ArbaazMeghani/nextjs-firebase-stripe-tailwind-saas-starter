@@ -12,11 +12,8 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-let app: FirebaseApp;
-let auth: Auth;
-let functions: Functions;
-app = initializeApp(firebaseConfig);
-auth = getAuth(app);
-functions = getFunctions(app);
+const app: FirebaseApp = initializeApp(firebaseConfig);
+const auth: Auth = getAuth(app);
+const functions: Functions = getFunctions(app);
 
 export { app, auth, functions };

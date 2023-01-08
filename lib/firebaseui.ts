@@ -1,4 +1,4 @@
-import firebase from "./firebase-config";
+import firebase from "firebase/compat/app";
 
 export const uiConfig = {
   signInFlow: "popup",

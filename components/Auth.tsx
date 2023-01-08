@@ -1,6 +1,6 @@
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import firebase from "../firebase/firebase-config";
-import { uiConfig } from "../firebase/firebaseui-config";
+import StyledFirebaseAuth from "./StyledFirebaseAuth";
+import { auth } from "../lib/firebase";
+import { uiConfig } from "../lib/firebaseui";
 
 interface Props {
   redirect?: string;
@@ -12,7 +12,7 @@ export const Auth = ({ redirect = "/" }: Props) => {
       <h1 className="text-lg">Login</h1>
       <StyledFirebaseAuth
         uiConfig={{ ...uiConfig, signInSuccessUrl: redirect }}
-        firebaseAuth={firebase.auth()}
+        firebaseAuth={auth}
       />
     </div>
   );

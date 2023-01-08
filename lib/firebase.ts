@@ -1,9 +1,8 @@
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
-import "firebase/compat/firestore";
-import "firebase/compat/functions";
+import { FirebaseApp, initializeApp } from "firebase/app";
+import { Auth, getAuth } from "firebase/auth";
+import { Functions, getFunctions } from "firebase/functions";
 
-const clientCredentials = {
+const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
   projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
@@ -13,8 +12,11 @@ const clientCredentials = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-if (!firebase.apps.length) {
-  firebase.initializeApp(clientCredentials);
-}
+let app: FirebaseApp;
+let auth: Auth;
+let functions: Functions;
+app = initializeApp(firebaseConfig);
+auth = getAuth(app);
+functions = getFunctions(app);
 
-export default firebase;
+export { app, auth, functions };

@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import React, { useEffect, useState } from "react";
-import { Auth } from "../components/Auth";
+import { Auth } from "../components/auth";
 
 const Login: NextPage = () => {
   const [redirect, setRedirect] = useState("/");

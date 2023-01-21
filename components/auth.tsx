@@ -1,4 +1,4 @@
-import StyledFirebaseAuth from "./StyledFirebaseAuth";
+import StyledFirebaseAuth from "./styled-firebase-auth";
 import { auth } from "../lib/firebase";
 import { uiConfig } from "../lib/firebaseui";
 
